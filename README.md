@@ -1,6 +1,6 @@
 # 🛡️ InternSecure
 
-> **Detect Fake & Unverified Internships**  
+ **Detect Fake & Unverified Internships**  
 InternSecure is an AI-powered platform that helps users identify fake, suspicious, or scam internship offers. Whether you're a student, a fresher, or a job seeker, InternSecure empowers you to verify the legitimacy of internship postings and company backgrounds before you apply.
 
 ---
