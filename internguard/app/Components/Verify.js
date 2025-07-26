@@ -16,12 +16,17 @@ export default function Verify() {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        if(!description || !company) {
+        if(!description || !company ||!url) {
             alert("Please fill in all required fields.");
             return;
         }
         setLoading(true);
-        await fetchData(description, company);
+        // let domain=url ? new URL(url).hostname : "";  
+        // if(domain===""){
+        //     domain=`${company.replace(/\s+/g, '').toLowerCase()}.com`; // Fallback to company name if URL is not provided
+        // }      
+        let domain=`${company.replace(/\s+/g, '').toLowerCase()}.com`;
+        await fetchData(description, domain);
         setLoading(false);
         setUrl("");
         setDescription("");
@@ -59,7 +64,7 @@ export default function Verify() {
                                     type="url"
                                     placeholder="https://example.com/internship"
                                     value={url}
-                                    {...loading&& {disabled}}
+                                    {...loading&& {disabled:true}}
                                     onChange={(e) => setUrl(e.target.value)}
                                     className="h-12 w-full px-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
                                 />
@@ -74,7 +79,7 @@ export default function Verify() {
                                     type="text"
                                     placeholder="Enter company name"
                                     value={company}
-                                    {...loading&& {disabled}}
+                                    {...loading&& {disabled:true}}
                                     onChange={(e) => setCompany(e.target.value)}
                                     className="h-12 w-full px-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
                                     required
@@ -90,7 +95,7 @@ export default function Verify() {
                                     className="min-h-32 resize-none h-12 w-full px-4 py-2 mt-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
                                     required
                                     value={description}
-                                    {...loading&& {disabled}}
+                                    {...loading&& {disabled:true}}
                                     onChange={(e) => setDescription(e.target.value)}
                                 />
                             </div>
@@ -99,7 +104,7 @@ export default function Verify() {
                                 type="submit"
                                 variant="hero"
                                 size="xl"
-                                {...loading&& {disabled}}
+                                {...loading&& {disabled:true}}
                                 className="w-full bg-blue-400 text-white text-lg hover:cursor-pointer font-semibold hover:scale-102 transition-transform flex items-center justify-center h-12 rounded-lg"
                             ><Shield className=" h-6 w-6" />
                                 {loading?" Verifying...": "Verify Internship"}
