@@ -16,7 +16,7 @@ const features = [
   {
     icon: Search,
     title: "Comprehensive Research",
-    description: "Google Search API integration provides detailed company background checks and cross-references multiple sources.",
+    description: "Google Search API(soon) integration provides detailed company background checks and cross-references multiple sources.",
     color: "bg-yellow-500"
   },
   {
