@@ -17,8 +17,7 @@ function Footer() {
             <div className="border-t w-3/4 mx-40 border-blue-900 mt-6 pt-8 text-center"></div>
 
             <p className="text-gray-200 text-sm">
-            © 2024 InternSecure. All rights reserved. Built with security in mind.<br></br>
-            made by  <b>"<i>Mansi Sharma, Riti Varshney and Vidhi Gupta</i>"</b>
+            © 2024 InternSecure. All rights reserved. Built with security in mind.
           </p>
 
         </div>
